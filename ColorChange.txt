@@ -1,0 +1,15 @@
+var img=new SimpleImage(200,200)
+print(img)
+for(var pixel of img.values()){
+    var newV=255
+    pixel.setRed(newV)
+    pixel.setGreen(newV)
+}
+print(img)
+var img=new SimpleImage(200,200)
+for(var pixel of img.values()){
+    var newV=255
+    pixel.setRed(newV)
+    pixel.setBlue(newV)
+}
+print(img)

@@ -1,0 +1,29 @@
+var img=new SimpleImage("hilton.jpg")
+print(img)
+
+for(var pixel of img.values()){
+    var x=pixel.getX()
+    if(x<(img.getWidth()/3)){
+        pixel.setRed(255)
+    }
+    else if(x>(img.getWidth()*(2/3))){
+        pixel.setBlue(255)
+    }
+    else{
+        pixel.setGreen(255)
+    }
+}
+print(img)
+
+var img=new SimpleImage("duke_blue_devil.png")
+for (var pixel of img.values()){
+    if (pixel.getGreen() == pixel.getBlue() == pixel.getRed()){
+        pixel.setRed(255)
+        pixel.setGreen(255)
+        pixel.setBlue(0)      
+    }
+    else{
+        
+    }
+}
+print(img)

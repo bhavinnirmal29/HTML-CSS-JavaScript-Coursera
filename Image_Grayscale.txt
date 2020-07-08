@@ -1,0 +1,14 @@
+// write your code here
+var i2 = new SimpleImage('chapel.png')
+print(i2)
+
+for (var pixel of i2.values()){
+    var r = pixel.getRed();
+    var g = pixel.getGreen();
+    var b = pixel.getBlue();
+    var avg = (r+g+b)/3;
+    pixel.setGreen(avg);
+    pixel.setRed(avg);
+    pixel.setBlue(avg);
+}
+print(i2)

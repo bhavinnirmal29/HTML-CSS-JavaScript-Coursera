@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Green Screen</title>
+		<style type="text/css">
+			canvas{
+				width:200px;
+				height:100px;
+				border:1px solid black;
+			}
+			body{
+				margin:30px;
+			}
+		</style>
+		<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+	</head>
+	<body>
+		<h2>Upload and Display Image</h2>
+		<canvas id="can">
+		</canvas>
+		<br>
+		<br>
+		<input type="file" multiple="false" accept="image/*" id="finput" onchange="upload();">
+		<br>
+		<br>
+		<input type="button" value= "Make GrayScale" id="btn1" onclick="makeGray1()">
+		<br>
+		<br>
+		<canvas id="can1">
+		</canvas>
+		
+	</body>
+	<script type="text/javascript">
+		var im;
+		var fi;
+		var i;
+		var i2;
+		var i1;
+		function upload () {
+		  im =document.getElementById("can");
+		  fi=document.getElementById("finput");
+		  i = new SimpleImage(fi);
+		  i2= new SimpleImage(fi);
+		  i.drawTo(im); 
+		}
+		function makeGray1 () {
+		  i1=document.getElementById("can1");
+		  for (var pixel of i2.values()){
+		    var r = pixel.getRed();
+		    var g = pixel.getGreen();
+		    var b = pixel.getBlue();
+		    var avg = (r+g+b)/3;
+		    pixel.setGreen(avg);
+		    pixel.setRed(avg);
+		    pixel.setBlue(avg);
+		  }
+		  i2.drawTo(i1);
+		}
+	</script>
+</html>

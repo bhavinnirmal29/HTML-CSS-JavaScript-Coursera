@@ -1,0 +1,21 @@
+// write your code here
+function cube(x){
+    return x*x*x;
+}
+
+print(cube(4))
+var img,img1
+function image(img1){
+    img=new SimpleImage(img1);
+    print(img.getWidth())
+    print(img.getHeight())
+    print(img.getPixel(1,4))
+}
+image("chapel.png")
+function add1(a,b){
+    c=a+b
+    d=b+a
+    print(c)
+    print(d)
+}
+add1("Hello","World")
